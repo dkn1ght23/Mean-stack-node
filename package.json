@@ -1,0 +1,17 @@
+ {
+  "name": "node-project",
+  "version": "0.0.1",
+  "description": "This is a node project to acquire basic knowledge about NodeJs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "basic",
+    "node",
+    "nodejs"
+  ],
+  "author": "Mujammal Ahmed",
+  "license": "MIT"
+}
