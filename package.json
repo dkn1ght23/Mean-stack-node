@@ -4,7 +4,8 @@
   "description": "This is a node project to acquire basic knowledge about NodeJs",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "nodemon main.js"
   },
   "keywords": [
     "node",
