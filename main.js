@@ -1,6 +1,10 @@
 const http = require('http');
 
 const Uploader = require('./upload');
+//const MailSender = require('./mailsender');
+const eventHandlers = require('./eventhandlers');
+const events = require('events');
+const eventEmitter = new events.EventEmitter();
 
 
 const port = 3000;
@@ -10,16 +14,32 @@ let mediaDirectory = __dirname + '/media/';
 let fileUploader = new Uploader(mediaDirectory);
 
 
+
 let requestListener = (req, res) => {
+
     res.writeHead(200, {
         'Access-Control-Allow-Origin': '*',
     })
+
     if(req.url === '/file-upload' && req.method === 'POST'){
         fileUploader.upload(req, res);
     }
-    else if(req.url == 'sendmail')
+
+    else if(req.url === '/sendmail' && req.method === 'GET'){
+        //let sender = new MailSender();
+
+        let mailDetails = {
+            subject: 'Account registration',
+            body: 'Welcome onboard, Your code is 4a7s93',
+            to: 'tanzilebad@gmail.com'
+        }
+        //sender.send(req, res, mailDetails);
+        eventEmitter.emit('sendmail', mailDetails);
+        res.write('sending mail');
+        res.end();
+    }
+
     else{
-        //console.log(req.headers);
         res.write('testing localhost');
         res.end();
     }
@@ -27,7 +47,7 @@ let requestListener = (req, res) => {
 }
 
 let onServerRun = (res) => {
-    //console.log(res);
+    eventHandlers(eventEmitter);
     console.log(`server is running on local host ${3000}`);
 }
 

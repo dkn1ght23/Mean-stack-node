@@ -1,5 +1,5 @@
-const SENDER_MAIL = 'mujammal.salman@gmail.com';
-const PASSWORD = 'mujammal.salman@gmail.com';
+const SENDER_MAIL = 'meanstack851@gmail.com';
+const PASSWORD = 'meanstack2021';
 
 module.exports = {
     SENDER_MAIL: SENDER_MAIL,
