@@ -16,6 +16,7 @@
   "author": "Mujammal Ahmed",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "formidable": "^1.2.2",
     "nodemailer": "^6.6.2",
     "upper-case": "^2.0.2"
