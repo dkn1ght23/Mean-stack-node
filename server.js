@@ -21,7 +21,20 @@ let requestListener = (req, res) => {
         'Access-Control-Allow-Origin': '*',
     })
 
-    if(req.url === '/file-upload' && req.method === 'POST'){
+    if(req.url === '/promise-a'){
+        setTimeout(() => {
+            res.write('testing local host after 5s');
+            res.end();
+        }, 5000);
+    }
+    else if(req.url === '/promise-b'){
+        setTimeout(() => {
+            res.write('testing local host after 3s');
+            res.end();
+        }, 3000);
+    }
+
+    else if(req.url === '/file-upload' && req.method === 'POST'){
         fileUploader.upload(req, res);
     }
 
