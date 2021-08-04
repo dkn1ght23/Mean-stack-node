@@ -14,7 +14,6 @@ let mediaDirectory = __dirname + '/media/';
 let fileUploader = new Uploader(mediaDirectory);
 
 
-
 let requestListener = (req, res) => {
 
     res.writeHead(200, {
