@@ -43,7 +43,7 @@ let requestListener = (req, res) => {
         let mailDetails = {
             subject: 'Account registration',
             body: 'Welcome onboard, Your code is 4a7s93',
-            to: 'tanzilebad@gmail.com'
+            to: 'mujammalrises@gmail.com'
         }
         //sender.send(req, res, mailDetails);
         eventEmitter.emit('sendmail', mailDetails);
